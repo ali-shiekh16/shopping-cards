@@ -2,10 +2,10 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 
 import CardsBlock from './components/cardsBlock';
+import Card from './components/card';
 
 function App() {
   const [images, setImages] = useState([]);
-  const [images2, setImages2] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -27,24 +27,30 @@ function App() {
     )
       .then(res => res.json())
       .then(res =>
-        setImages2(prev =>
-          res.hits.map((hit, index) => ({
+        setImages(prev => {
+          const images = res.hits.map((hit, index) => ({
             src: hit.largeImageURL,
             id: index,
             title: `Pants ${index + 1}`,
-          }))
-        )
+          }));
+          return [
+            ...prev,
+            {
+              src: '/images/transparent.png',
+              id: Math.random() + Date.now(),
+              overlayText: 'Pants',
+            },
+            ...images,
+          ];
+        })
       );
   }, []);
 
+  console.log(images);
+
   return (
     <div className='container'>
-      <div className='block-container'>
-        <CardsBlock images={images} title='Casual Shoes' />
-      </div>
-      {/* <div className='block-container2'>
-        <CardsBlock images={images2} title='Pants' />
-      </div> */}
+      <CardsBlock images={images} title='Casual Shoes' />
     </div>
   );
 }

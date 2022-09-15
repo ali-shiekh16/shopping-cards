@@ -26,10 +26,10 @@ body {
   font-size: 62.5%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--color-text);
-  min-width: 200%;
+  min-width: 300%;
   max-width: 10000%;
-  /* overflow-x: visible !important; */
 }
+
 h2 {
   font-size: 1.8rem;
   margin-bottom: .7rem
@@ -44,6 +44,7 @@ p {
 .card {
   /* border: solid tomato 2px; */
   cursor: pointer;
+
 }
 
 .card__img-wrapper {
@@ -51,6 +52,12 @@ p {
   box-shadow: 0 2px 5px 2px var(--color-shadow); 
   padding: .5rem;
   border-radius: 4px;
+  position: relative;
+}
+
+.card__img-wrapper--no-shadow {
+  box-shadow: none;
+  /* border: solid green 10px */
 }
 
 .card__img {
@@ -67,20 +74,16 @@ p {
   border-radius: 4px;
 }
 
-/*  CARDS BLOCKS STYLES */
-.block-container {
-  border: solid red 5px;
+.card__overlay-text {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 4rem 3rem;
 }
 
-.block-container2 {
-  border: solid yellow 15px;
-}
 
 /* CARDS CONTAINER */
 
 .container {
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(auto, max-content);
-  align-items: end; */
+  /* SO EMPTY */
 }
