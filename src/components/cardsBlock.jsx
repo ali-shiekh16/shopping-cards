@@ -6,7 +6,7 @@ import Card from './card';
 function CardsBlock({ images, title }) {
   return (
     <div className='cards-block'>
-      <h2>{title}</h2>
+      {/* <h2 className='cards-block__title text-fancy'>{title}</h2> */}
       {images && (
         <Masonry
           items={images}

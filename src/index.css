@@ -1,42 +1,50 @@
 :root {
-  /* --color-primary: #f4a384, */
-  --color-primary: tomato,
+  --color-primary: #f4a384;
+  /* --color-primary: tomato; */
   --color-border: #ccc;
   --color-text: rgb(41, 41, 41);
   --color-shadow: #e9e9e9;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* Hide the scrollbars */
-/* html {
-    scrollbar-width: none;  
-    -ms-overflow-style: none;  
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar {
-    width: 0px; 
-} */
+  width: 0px;
+}
 
 body {
   font-size: 62.5%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--color-text);
-  min-width: 300%;
-  max-width: 10000%;
+  min-width: 400%;
+  max-width: infinite;
 }
 
 h2 {
   font-size: 1.8rem;
-  margin-bottom: .7rem
+  margin-bottom: 0.7rem;
 }
 
 p {
   font-size: 1.05rem;
+}
+
+.text-fancy {
+  font-family: 'Dancing Script', cursive;
 }
 
 /* Card styles */
@@ -44,46 +52,79 @@ p {
 .card {
   /* border: solid tomato 2px; */
   cursor: pointer;
-
 }
 
 .card__img-wrapper {
-            /* 'x' 'y' 'spread' 'blur' 'color'*/
-  box-shadow: 0 2px 5px 2px var(--color-shadow); 
-  padding: .5rem;
+  /* 'x' 'y' 'spread' 'blur' 'color'*/
+  box-shadow: 0 2px 5px 2px var(--color-shadow);
+  padding: 0.5rem;
   border-radius: 4px;
   position: relative;
 }
 
 .card__img-wrapper--no-shadow {
   box-shadow: none;
-  /* border: solid green 10px */
+}
+
+.card__img-wrapper--xl {
+  /* border: solid red 5px; */
+  margin: 6rem 0;
+  cursor: initial;
 }
 
 .card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px
+  border-radius: 4px;
 }
 
 .card__title {
   text-transform: uppercase;
   font-size: 1rem;
-  padding: .8rem .5rem;
+  padding: 0.8rem 0.5rem;
   border-radius: 4px;
 }
 
-.card__overlay-text {
-  font-size: 2rem;
+.card__overlay-header-text {
   text-align: center;
-  text-transform: uppercase;
-  padding: 4rem 3rem;
+  font-size: 2.5rem;
+  margin: 0;
 }
 
+.card__overlay-subtext {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.card__overlay-text {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: capitalize;
+  /* padding: 3rem 3rem; */
+}
+.card__overlay-text--large {
+  font-size: 5.5rem;
+}
+
+.card__overlay-text--xl {
+  font-size: 6rem;
+  text-align: left;
+}
+
+/* CARDS BLOCK */
+.cards-block__title {
+  font-size: 6.5rem;
+  padding: 4rem 5rem;
+  color: var(--color-primary);
+}
 
 /* CARDS CONTAINER */
 
 .container {
-  /* SO EMPTY */
+}
+
+.card-centered {
 }
